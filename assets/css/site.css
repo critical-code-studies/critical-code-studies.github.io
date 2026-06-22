@@ -232,7 +232,7 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 }
 .cd-tab:hover { color: var(--ink); border-color: var(--line); }
 .cd-tab.is-on { color: var(--beam); border-color: var(--beam); }
-.codedeck-view { overflow: hidden; }
+.codedeck-view { overflow: hidden; cursor: pointer; }
 .codedeck-track { display: flex; transition: transform 0.5s cubic-bezier(0.5, 0, 0.2, 1); }
 @media (prefers-reduced-motion: reduce) { .codedeck-track { transition: none; } }
 .codeslide { flex: 0 0 100%; min-width: 0; padding: 0 1.3rem 1.2rem; }

@@ -72,6 +72,9 @@
     tabs.forEach(function (t) {
       t.addEventListener('click', function () { go(parseInt(t.getAttribute('data-i'), 10) || 0); start(); });
     });
+    // clicking the card itself advances to the next codebase
+    var view = deck.querySelector('.codedeck-view');
+    if (view) view.addEventListener('click', function () { go(cur + 1); start(); });
     deck.addEventListener('mouseenter', stop);
     deck.addEventListener('mouseleave', start);
     deck.addEventListener('focusin', stop);
