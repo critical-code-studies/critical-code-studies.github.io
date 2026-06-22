@@ -42,5 +42,5 @@ pen laid over the machine's green voice.
 Served by GitHub Pages from the `main` branch (root). `.nojekyll` is present so
 the `assets/` directory is published verbatim.
 
-Co-led by David M. Berry (University of Sussex) and Mark C. Marino (University of
+By David M. Berry (University of Sussex) and Mark C. Marino (University of
 Southern California).

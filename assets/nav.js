@@ -45,6 +45,41 @@
       if (e.key === 'Escape') closeAll();
     });
   }
-  if (document.readyState !== 'loading') init();
-  else document.addEventListener('DOMContentLoaded', init);
+
+  // Code deck: slide the hero source across the readings' codebases.
+  function initDeck() {
+    var deck = document.getElementById('codedeck');
+    if (!deck) return;
+    var track = deck.querySelector('.codedeck-track');
+    var tabs = Array.prototype.slice.call(deck.querySelectorAll('.cd-tab'));
+    var slides = deck.querySelectorAll('.codeslide');
+    if (!track || !tabs.length) return;
+    var n = slides.length, cur = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function go(i) {
+      cur = (i + n) % n;
+      track.style.transform = 'translateX(' + (-cur * 100) + '%)';
+      tabs.forEach(function (t, j) {
+        var on = j === cur;
+        t.classList.toggle('is-on', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { if (reduce) return; stop(); timer = setInterval(function () { go(cur + 1); }, 6500); }
+
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { go(parseInt(t.getAttribute('data-i'), 10) || 0); start(); });
+    });
+    deck.addEventListener('mouseenter', stop);
+    deck.addEventListener('mouseleave', start);
+    deck.addEventListener('focusin', stop);
+    deck.addEventListener('focusout', start);
+    go(0); start();
+  }
+
+  function boot() { init(); initDeck(); }
+  if (document.readyState !== 'loading') boot();
+  else document.addEventListener('DOMContentLoaded', boot);
 })();

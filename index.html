@@ -12,8 +12,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://critical-code-studies.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="assets/css/site.css?v=1">
-  <script src="assets/nav.js" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/nav.js?v=2" defer></script>
 </head>
 <body>
 
@@ -69,12 +69,48 @@
         <a class="btn" href="about.html">What is CCS?</a>
       </div>
 
-      <!-- real source: the complete 10 PRINT program (Commodore 64 BASIC, 1982) -->
-      <figure class="codecard" aria-label="The complete source of the 10 PRINT program">
-        <div class="cc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <pre class="src"><span class="tok-ln">10</span> <span class="tok-kw">PRINT</span> <span class="tok-fn">CHR$</span><span class="tok-op">(</span><span class="tok-num">205.5</span><span class="tok-op">+</span><span class="tok-fn">RND</span><span class="tok-op">(</span><span class="tok-num">1</span><span class="tok-op">));</span> <span class="tok-op">:</span> <span class="tok-kw">GOTO</span> <span class="tok-num">10</span></pre>
-        <figcaption><strong>The whole program.</strong> One line of Commodore 64 BASIC (1982). It prints an endless diagonal maze: <span class="tok-num">205.5+RND(1)</span> picks at random between PETSCII characters 205 (<span style="color:var(--ink)">╲</span>) and 206 (<span style="color:var(--ink)">╱</span>), forever. The subject of <em>10 PRINT</em> (MIT Press, 2013).</figcaption>
-      </figure>
+      <!-- real source from the readings, sliding across codebases -->
+      <div class="codedeck" id="codedeck" aria-label="Source code from the readings">
+        <div class="cc-bar">
+          <i aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block;"></i>
+          <i aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block;"></i>
+          <i aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block;"></i>
+          <div class="cd-tabs" role="tablist" aria-label="Choose a program">
+            <button class="cd-tab is-on" type="button" data-i="0" role="tab" aria-selected="true">10 PRINT</button>
+            <button class="cd-tab" type="button" data-i="1" role="tab" aria-selected="false">ELIZA</button>
+            <button class="cd-tab" type="button" data-i="2" role="tab" aria-selected="false">Spacewar!</button>
+          </div>
+        </div>
+        <div class="codedeck-view">
+          <div class="codedeck-track">
+
+            <figure class="codeslide" aria-label="10 PRINT source">
+<pre class="src"><span class="tok-ln">10</span> <span class="tok-kw">PRINT</span> <span class="tok-fn">CHR$</span><span class="tok-op">(</span><span class="tok-num">205.5</span><span class="tok-op">+</span><span class="tok-fn">RND</span><span class="tok-op">(</span><span class="tok-num">1</span><span class="tok-op">));</span> <span class="tok-op">:</span> <span class="tok-kw">GOTO</span> <span class="tok-num">10</span></pre>
+              <figcaption><strong>The whole program.</strong> One line of Commodore 64 BASIC that prints an endless diagonal maze: <span class="tok-num">205.5+RND(1)</span> picks at random between PETSCII 205 (╲) and 206 (╱), forever.<span class="prov">Commodore 64 BASIC, 1982 · subject of 10 PRINT (MIT Press, 2013)</span></figcaption>
+            </figure>
+
+            <figure class="codeslide" aria-label="ELIZA source">
+<pre class="src"><span class="tok-com">R* * * * * * * * * * SCRIPT ERROR EXIT</span>
+<span class="tok-lbl">NOMATCH(1)</span>  <span class="tok-kw">PRINT COMMENT</span> <span class="tok-str">$PLEASE CONTINUE $</span>
+<span class="tok-lbl">NOMATCH(2)</span>  <span class="tok-kw">PRINT COMMENT</span> <span class="tok-str">$HMMM $</span>
+<span class="tok-lbl">NOMATCH(3)</span>  <span class="tok-kw">PRINT COMMENT</span> <span class="tok-str">$GO ON , PLEASE $</span>
+<span class="tok-lbl">NOMATCH(4)</span>  <span class="tok-kw">PRINT COMMENT</span> <span class="tok-str">$I SEE $</span></pre>
+              <figcaption><strong>The content-free fallback.</strong> When no keyword matches, control reaches <span class="tok-lbl">NOMATCH</span> and prints a canned continuer. The illusion of understanding is manufactured here, in the default branch.<span class="prov">ELIZA (MAD-SLIP), c. 1965 · source: ELIZA Archaeology Project</span></figcaption>
+            </figure>
+
+            <figure class="codeslide" aria-label="Spacewar! source">
+<pre class="src"><span class="tok-kw">define</span>
+<span class="tok-fn">dispt</span> A,Y,B
+    <span class="tok-kw">repeat</span> <span class="tok-num">6</span>, B=B+B   <span class="tok-com">/ shift brightness into the display field</span>
+    <span class="tok-kw">lio</span> Y             <span class="tok-com">/ load the Y coordinate into the IO register</span>
+    <span class="tok-kw">dpy</span>-A+B           <span class="tok-com">/ display one point (X already in the accumulator)</span>
+    <span class="tok-kw">term</span></pre>
+              <figcaption><strong>Display one point.</strong> The <span class="tok-fn">dispt</span> macro loads Y into the IO register, then <span class="tok-kw">dpy</span> lights a single dot. The whole game is points pushed through this, redrawn every pass.<span class="prov">Spacewar! 3.1, 1962 · PDP-1 MACRO assembly</span></figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -83,7 +119,7 @@
     <!-- ===================== WHAT ===================== -->
     <section class="section lede" id="what">
       <span class="kicker">What we do</span>
-      <h2>The premise: code can be read</h2>
+      <h2>Code can be read</h2>
       <p>Critical Code Studies (CCS) applies the interpretive practices of the humanities to the extra-functional meaning of computer source code. A program does its work, but it also carries assumptions, histories, metaphors, and politics in its variable names, its comments, its data structures, its silences and its defaults. CCS reads those.</p>
       <p>This site gathers a series of sustained close readings of landmark programs, together with the method that holds them together. Each reading takes a single historic system and reads its actual source, not a summary or a screenshot but the code itself, as a document of its moment.</p>
     </section>
@@ -203,7 +239,7 @@
     <section class="section" id="about">
       <span class="kicker">The group</span>
       <h2>Who reads</h2>
-      <p>These readings are produced as a collaboration, co-led by <strong>David M. Berry</strong> (University of Sussex) and <strong>Mark C. Marino</strong> (University of Southern California), drawing on the wider Critical Code Studies community that has met since 2010 in the CCS Working Group. The readings are open and citable; the source for each site is on GitHub.</p>
+      <p>These readings are produced as a collaboration between <strong>David M. Berry</strong> (University of Sussex) and <strong>Mark C. Marino</strong> (University of Southern California), drawing on the wider Critical Code Studies community that has met since 2010 in the CCS Working Group. The readings are open and citable; the source for each site is on GitHub.</p>
       <p><a href="people.html">Meet the people &rsaquo;</a> &nbsp;·&nbsp; <a href="https://github.com/critical-code-studies">Source on GitHub &rsaquo;</a></p>
     </section>
 
@@ -211,7 +247,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="micro">Critical Code Studies, reading code as a cultural text. Co-led by David M. Berry (University of Sussex) and Mark C. Marino (University of Southern California). Source: <a href="https://github.com/critical-code-studies">github.com/critical-code-studies</a></p>
+      <p class="micro">Critical Code Studies, reading code as a cultural text. David M. Berry (University of Sussex) and Mark C. Marino (University of Southern California). Source: <a href="https://github.com/critical-code-studies">github.com/critical-code-studies</a></p>
       <nav class="footer-nav">
         <a href="readings.html">Readings</a>
         <a href="about.html">Method</a>
