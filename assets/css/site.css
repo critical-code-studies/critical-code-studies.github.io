@@ -271,6 +271,23 @@ h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--bright); margin
 .member .meta .role { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--beam); }
 .member .meta .sep { color: var(--line); margin: 0 0.55rem; }
 
+/* ---------- working-group threads ---------- */
+.wg { margin-top: 1.6rem; padding: 1.6rem 1.6rem 1.4rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.wg-head { display: flex; align-items: baseline; gap: 0.7rem 1rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+.wg-head .live-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--beam); border: 1px solid var(--beam); border-radius: 3px; padding: 0.15rem 0.45rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+.wg-head .live-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--beam); box-shadow: 0 0 7px var(--beam); animation: wg-pulse 2.2s ease-in-out infinite; }
+@keyframes wg-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .wg-head .live-tag .dot { animation: none; } }
+.threads { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+.threads li { border-top: 1px solid var(--line-soft); }
+.threads li:first-child { border-top: 0; }
+.threads a { display: block; padding: 0.85rem 0; border: 0; }
+.threads a:hover { text-shadow: none; }
+.threads a:hover .t-title { color: var(--bright); text-shadow: var(--glow); }
+.threads .t-title { display: block; font-family: var(--serif); font-size: 1.06rem; color: var(--ink); line-height: 1.4; }
+.threads .t-meta { display: block; margin-top: 0.2rem; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); }
+.threads .t-meta .who { color: var(--beam); }
+
 /* ---------- bibliography ---------- */
 .bib { list-style: none; padding: 0; margin: 1.6rem 0 0; }
 .bib li { padding: 0.85rem 0; border-top: 1px solid var(--line-soft); font-size: 0.98rem; line-height: 1.55; }
