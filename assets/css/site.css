@@ -200,6 +200,20 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 }
 .codecard .note::before { content: "→"; position: absolute; left: 0; color: var(--beam); font-style: normal; }
 
+/* syntax tokens for the real source snippet */
+.codecard .src { font-size: 1.02rem; line-height: 1.7; letter-spacing: 0.3px; color: var(--ink); }
+.tok-ln  { color: var(--ink-dim); }                    /* line number */
+.tok-kw  { color: var(--green); font-weight: 700; }    /* BASIC keyword */
+.tok-fn  { color: var(--vector); }                     /* built-in function */
+.tok-num { color: var(--amber); }                      /* numeric literal */
+.tok-op  { color: var(--ink-dim); }                    /* operators, punctuation */
+.tok-com { color: var(--ink-dim); font-style: italic; }/* comment */
+.codecard figcaption {
+  margin: 0.9rem 0 0; font-family: var(--serif); font-size: 0.9rem; line-height: 1.5;
+  color: var(--ink-dim); border-top: 1px solid var(--line-soft); padding-top: 0.7rem;
+}
+.codecard figcaption strong { color: var(--ink); font-weight: 600; }
+
 /* ---------- sections ---------- */
 main { padding: clamp(3rem, 8vh, 5rem) 0; }
 .section { margin-bottom: clamp(3rem, 8vh, 5rem); }

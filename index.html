@@ -40,24 +40,24 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="hero-code" aria-hidden="true">
-      <pre class="hero-code-inner">(DEFINE DOCTOR
-  (LAMBDA (INPUT)
-    (COND ((KEYWORD? INPUT) (TRANSFORM INPUT (RULE INPUT)))
-          (T (FALLBACK)))))      ; when nothing matches, perform understanding
-
-(SETQ SCRIPT
-  '((SORRY  ((0) (PLEASE DON'T APOLOGISE)))
-    (REMEMBER ((0 YOU REMEMBER 0)
-               (DO YOU OFTEN THINK OF 4)))
-    (MY     ((0 MY 0) (YOUR 3) (WHY DO YOU SAY YOUR 3)))
-    (NEWKEY ((0) (I SEE) (PLEASE GO ON) (TELL ME MORE)))))
-
-;; the machine has no model of you. it has a table of your grammar.
-(THERE-IS  (:BLOCK B1) (:COLOR RED)    (:SHAPE CUBE))
-(THERE-IS  (:BLOCK B2) (:COLOR GREEN)  (:SHAPE PYRAMID))
-(ASSERT (ON B1 TABLE))
-(GOAL (GRASP B1) (USE THENOT (EXISTS X (ON X B1))))
-(PRINT "OK.")            ; the famous, total, untroubled compliance
+      <pre class="hero-code-inner">10 PRINT CHR$(205.5+RND(1)); : GOTO 10
+╲╱╲╲╱╲╱╱╲╱╲╲╲╱╱╲╱╲╱╲╲╱╱╲╲╱╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲
+╱╲╱╱╲╲╱╲╱╲╲╱╱╲╲╱╲╱╱╲╱╲╲╱╲╱╱╲╲╱╲╱╲╲╱╱╲╲╱╲╱╲╱
+╲╲╱╲╱╲╱╱╲╲╱╲╱╱╲╲╱╲╲╱╱╲╱╲╱╲╲╱╲╱╱╲╱╲╲╱╲╲╱╱╲╱╲
+╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╱╲╲╱╲╱╲╲╱╱╲╱╲╲╱╲╱╱╲╲╱╲╱
+10 PRINT CHR$(205.5+RND(1)); : GOTO 10
+╲╱╱╲╲╱╲╱╲╲╱╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╲╱╱╲╲╱╲╲╱╱╲╱╲╲
+╱╱╲╲╱╲╱╲╱╲╲╱╲╲╱╱╲╱╲╱╲╲╱╲╱╱╲╲╱╲╱╱╲╲╱╲╱╲╱╲╲╱╱
+╲╱╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╲╱╲╲╱╱╲╲╱╲╱╱╲╱╲╲╱╲╱╲
+╱╲╱╲╲╱╲╱╱╲╲╱╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╲╱╲╲╱╱╲╲╱╲
+10 PRINT CHR$(205.5+RND(1)); : GOTO 10
+╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╱╲╱╲╲╱╲╲╱╱╲╱╲╱╲╲╱╲╱╱╲╲╱╲
+╱╲╲╱╲╱╱╲╲╱╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╲╱╲╲╱╱╲╲╱╲╱╲
+╲╱╲╲╱╲╱╲╱╱╲╲╱╲╱╱╲╲╱╲╱╲╲╱╱╲╱╲╱╲╲╱╲╱╱╲╲╱╲╲╱╱╲
+╱╲╱╲╱╲╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╱╲╲╱╲
+10 PRINT CHR$(205.5+RND(1)); : GOTO 10
+╲╱╲╱╲╲╱╱╲╲╱╲╱╲╱╱╲╲╱╲╱╱╲╱╲╲╱╲╱╲╱╲╲╱╱╲╲╱╲╱╱╲╲
+╱╲╲╱╱╲╲╱╲╱╲╱╲╲╱╱╲╱╲╲╱╲╱╲╱╲╲╱╲╱╱╲╲╱╲╱╲╱╱╲╲╱╲
 </pre>
     </div>
     <div class="wrap hero-inner">
@@ -69,11 +69,11 @@
         <a class="btn" href="about.html">What is CCS?</a>
       </div>
 
-      <!-- annotated-code motif: the method, in miniature -->
-      <figure class="codecard" aria-label="An annotated line of code">
+      <!-- real source: the complete 10 PRINT program (Commodore 64 BASIC, 1982) -->
+      <figure class="codecard" aria-label="The complete source of the 10 PRINT program">
         <div class="cc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <pre>(NEWKEY <span class="mark">((0) (I SEE) (PLEASE GO ON)))</span></pre>
-        <span class="note">When no keyword matches, ELIZA falls through to content-free reply. The illusion of understanding is manufactured precisely here, in the default branch.</span>
+        <pre class="src"><span class="tok-ln">10</span> <span class="tok-kw">PRINT</span> <span class="tok-fn">CHR$</span><span class="tok-op">(</span><span class="tok-num">205.5</span><span class="tok-op">+</span><span class="tok-fn">RND</span><span class="tok-op">(</span><span class="tok-num">1</span><span class="tok-op">));</span> <span class="tok-op">:</span> <span class="tok-kw">GOTO</span> <span class="tok-num">10</span></pre>
+        <figcaption><strong>The whole program.</strong> One line of Commodore 64 BASIC (1982). It prints an endless diagonal maze: <span class="tok-num">205.5+RND(1)</span> picks at random between PETSCII characters 205 (<span style="color:var(--ink)">╲</span>) and 206 (<span style="color:var(--ink)">╱</span>), forever. The subject of <em>10 PRINT</em> (MIT Press, 2013).</figcaption>
       </figure>
     </div>
   </section>
