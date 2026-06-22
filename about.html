@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Method — Critical Code Studies</title>
+  <meta name="description" content="The method behind Critical Code Studies: reading source code as a cultural text, with close attention to language, materiality, defaults, and metaphor.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="theme-color" content="#11131a">
+  <link rel="stylesheet" href="assets/css/site.css?v=1">
+  <script src="assets/nav.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Critical Code Studies home">
+        <svg viewBox="0 0 32 32" aria-hidden="true" class="brand-mark"><g fill="none" stroke="#f2ab3c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 8 L5 16 L12 24"/><path d="M20 8 L27 16 L20 24"/><path d="M17.5 6 L14.5 26"/></g></svg>
+        <span class="brand-block">
+          <span class="brand-name">critical<span class="slash">/</span>code<span class="slash">/</span>studies</span>
+          <span class="brand-tagline">Reading code as a cultural text</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <a class="nav-top nav-direct" href="./">Home</a>
+        <a class="nav-top nav-direct" href="readings.html">Readings</a>
+        <a class="nav-top nav-direct" href="about.html">Method</a>
+        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="bibliography.html">Bibliography</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content" style="padding-top: 3.4rem;">
+
+    <section class="section lede">
+      <span class="kicker">Method</span>
+      <h2 style="font-size: clamp(1.9rem, 5.2vw, 2.8rem);">Reading code as a cultural text</h2>
+      <p>Critical Code Studies is the application of critical hermeneutics to the interpretation of computer source code, program architecture, and documentation within a sociohistorical context. It holds that code is not exhausted by what it computes. Like any writing, code means more than it says, and it can be read for that surplus.</p>
+    </section>
+
+    <section class="section">
+      <span class="kicker">The premise</span>
+      <h2>Code is writing</h2>
+      <p>Source code occupies an unusual position. It is functional — it must run, and it answers to the machine — and it is also a text addressed to other people: collaborators, maintainers, students, future readers. It is written in named languages, with conventions, idioms, and styles. It carries comments, which are pure address to a human reader. It chooses metaphors. It is authored under conditions, by people, in institutions, for purposes.</p>
+      <p>That double character is what makes code available to interpretation. A variable named <code style="font-family:var(--mono);color:var(--green)">patient</code> rather than <code style="font-family:var(--mono);color:var(--green)">user</code> encodes a theory of the encounter. A hard-coded default encodes an expectation about who the program is for. A comment that apologises for a hack records a history of constraint. None of this changes what the program computes, and all of it is meaning.</p>
+
+      <blockquote class="pull">
+        We do not read code to find out what it does. We read it to find out what it assumes.
+        <cite>Critical Code Studies</cite>
+      </blockquote>
+    </section>
+
+    <section class="section">
+      <span class="kicker">How we read</span>
+      <h2>Four moves</h2>
+      <p>Every reading on this site works through the same set of questions. They are not a checklist so much as a discipline — a way of staying with the source rather than retreating to a summary of its behaviour.</p>
+
+      <div class="method">
+        <div class="m">
+          <span class="n">01</span>
+          <h3>Read the source itself</h3>
+          <p>The unit of analysis is the actual code: the listing, the identifiers, the comments, the data structures. Not a description of what the program does, but the document that does it. Where the original source survives, we read it; where it does not, we reconstruct from the best available record and say so.</p>
+        </div>
+        <div class="m">
+          <span class="n">02</span>
+          <h3>Mind the defaults and silences</h3>
+          <p>The most revealing lines are often the ones that handle the unhandled case: the fall-through, the catch-all, the magic constant, the thing left unwritten. A program's assumptions live where it stops making distinctions.</p>
+        </div>
+        <div class="m">
+          <span class="n">03</span>
+          <h3>Situate the system materially</h3>
+          <p>A program is written in a particular language, for a particular machine, under a particular operating system, inside a particular institution, at a particular moment. MacLisp on the ITS, assembly on the PDP-1: the medium is part of the meaning, not a backdrop to it.</p>
+        </div>
+        <div class="m">
+          <span class="n">04</span>
+          <h3>Follow the metaphors</h3>
+          <p>"Blocks world", "the doctor", "the player", "the kill". Naming is theory under another name. The figures a program reaches for set the horizon of what it can imagine, and tracing them is one of the surest routes into its politics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="kicker">Lineage</span>
+      <h2>Where this comes from</h2>
+      <p>The term <em>Critical Code Studies</em> was proposed by Mark C. Marino in 2006, and the field has developed since 2010 through the online <a href="http://wg.criticalcodestudies.com/" target="_blank" rel="noopener noreferrer">Critical Code Studies Working Group</a> and the biennial CCS conferences. Its touchstones include Marino's <em>Critical Code Studies</em> (MIT Press, 2020), the collaboratively authored <em>10 PRINT CHR$(205.5+RND(1)); : GOTO 10</em> (2013), and the wider currents of software studies, platform studies, and the digital humanities.</p>
+      <p>The readings collected here continue that work, with an emphasis on sustained, single-program close readings presented as standalone, citable sites. See the <a href="bibliography.html">bibliography</a> for the foundational literature, and the <a href="readings.html">readings</a> for the programs themselves.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">Critical Code Studies — reading code as a cultural text. Co-led by David M. Berry (University of Sussex) and Mark C. Marino (University of Southern California). Source: <a href="https://github.com/critical-code-studies">github.com/critical-code-studies</a></p>
+      <nav class="footer-nav">
+        <a href="readings.html">Readings</a>
+        <a href="about.html">Method</a>
+        <a href="people.html">People</a>
+        <a href="bibliography.html">Bibliography</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
