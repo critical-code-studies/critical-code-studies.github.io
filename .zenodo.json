@@ -1,0 +1,16 @@
+{
+  "title": "Critical Code Studies: reading code as a cultural text",
+  "description": "The umbrella site for the Critical Code Studies group: an introduction to CCS as a method, close readings of landmark programs (SHRDLU, Spacewar!, ELIZA, 10 PRINT), and a foundational bibliography.",
+  "upload_type": "software",
+  "creators": [
+    { "name": "Berry, David M.", "affiliation": "University of Sussex" },
+    { "name": "Marino, Mark C.", "affiliation": "University of Southern California" }
+  ],
+  "keywords": [
+    "critical code studies",
+    "software studies",
+    "digital humanities",
+    "close reading",
+    "source code"
+  ]
+}
