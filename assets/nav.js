@@ -82,7 +82,39 @@
     go(0); start();
   }
 
-  function boot() { init(); initDeck(); }
+  // Light / dark: the page can be turned over from the workbench to paper.
+  function initTheme() {
+    var root = document.documentElement;
+    function current() {
+      var a = root.getAttribute('data-theme');
+      if (a) return a;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var btns = document.querySelectorAll('.theme-toggle');
+    Array.prototype.forEach.call(btns, function (btn) {
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('ccs-theme', next); } catch (e) {}
+      });
+    });
+  }
+
+  // Reveal sections and cards as they enter the viewport.
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(els, function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+  }
+
+  function boot() { init(); initDeck(); initTheme(); initReveal(); }
   if (document.readyState !== 'loading') boot();
   else document.addEventListener('DOMContentLoaded', boot);
 })();

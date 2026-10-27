@@ -6,14 +6,18 @@
   <title>Critical Code Studies · Reading code as a cultural text</title>
   <meta name="description" content="Critical Code Studies reads software source code as a cultural text. Close readings of the programs that shaped computing (Spacewar! 1962, ELIZA 1966, SHRDLU 1968–70), and the method behind them.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta name="theme-color" content="#11131a">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11131a" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Critical Code Studies">
   <meta property="og:description" content="Reading software source code as a cultural text. Close readings of the programs that shaped computing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://critical-code-studies.github.io/">
+  <script>(function(){try{var t=localStorage.getItem('ccs-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="assets/css/site.css?v=5">
-  <script src="assets/nav.js?v=5" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css?v=6">
+  <script src="assets/nav.js?v=6" defer></script>
 </head>
 <body>
 
@@ -33,6 +37,10 @@
         <a class="nav-top nav-direct" href="about.html">Method</a>
         <a class="nav-top nav-direct" href="people.html">People</a>
         <a class="nav-top nav-direct" href="bibliography.html">Bibliography</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -117,7 +125,7 @@
   <main class="wrap content">
 
     <!-- ===================== WHAT ===================== -->
-    <section class="section lede" id="what">
+    <section class="section lede reveal" id="what">
       <span class="kicker">What we do</span>
       <h2>Code can be read</h2>
       <p>Critical Code Studies (CCS) applies the interpretive practices of the humanities to the extra-functional meaning of computer source code. A program does its work, but it also carries assumptions, histories, metaphors, and politics in its variable names, its comments, its data structures, its silences and its defaults. CCS reads those.</p>
@@ -132,24 +140,39 @@
 
       <div class="readings">
 
-        <a class="reading live" href="https://critical-code-studies.github.io/SHRDLU/" style="--accent: var(--green);">
+        <a class="reading live reveal" href="https://critical-code-studies.github.io/SHRDLU/" style="--accent: var(--green);">
           <span class="r-year">MIT · 1968–70</span>
           <span class="r-title">SHRDLU</span>
           <p class="r-desc">Terry Winograd's natural-language program for the blocks world. Reading the code at the high-water mark of symbolic AI, in MacLisp and Micro-Planner.</p>
+          <div class="r-stats">
+            <div><b>2</b><span>languages</span></div>
+            <div><b>11</b><span>source files</span></div>
+            <div><b>363</b><span>paratexts</span></div>
+          </div>
           <span class="r-status"><span class="dot"></span>Live · read now</span>
         </a>
 
-        <span class="reading" aria-disabled="true" style="--accent: var(--vector);">
+        <span class="reading reveal" aria-disabled="true" style="--accent: var(--vector);">
           <span class="r-year">MIT · 1962</span>
           <span class="r-title">Spacewar!</span>
           <p class="r-desc">Steve Russell and the TMRC hackers on the PDP-1. The first widely shared video game, read through its assembly source and its vector-display physics.</p>
+          <div class="r-stats">
+            <div><b>PDP-1</b><span>MACRO source</span></div>
+            <div><b>4</b><span>version lines</span></div>
+            <div><b>5</b><span>ports read</span></div>
+          </div>
           <span class="r-status"><span class="dot"></span>In preparation</span>
         </span>
 
-        <a class="reading" href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/" style="--accent: var(--eliza);">
-          <span class="r-year">MIT · 1966</span>
+        <a class="reading reveal" href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/" style="--accent: var(--eliza);">
+          <span class="r-year">MIT · 1964–68</span>
           <span class="r-title">ELIZA</span>
           <p class="r-desc">Joseph Weizenbaum's DOCTOR script and the SLIP language beneath it. The founding CCS reading, the conversational illusion taken apart line by line.</p>
+          <div class="r-stats">
+            <div><b>MAD-SLIP</b><span>1965 source</span></div>
+            <div><b>138</b><span>implementations</span></div>
+            <div><b>414</b><span>paratexts</span></div>
+          </div>
           <span class="r-status"><span class="dot"></span>Essay &amp; book</span>
         </a>
 
@@ -159,7 +182,7 @@
     <hr class="divider">
 
     <!-- ===================== METHOD ===================== -->
-    <section class="section" id="method">
+    <section class="section reveal" id="method">
       <span class="kicker">How we read</span>
       <h2>Close reading, for code</h2>
       <p>CCS does not treat code as a black box to be benchmarked, nor as mere documentation of a system's behaviour. It treats the source as a text with an inside. The method borrows from literary criticism, science and technology studies, and the history of computing, and it asks a consistent set of questions of every program.</p>
@@ -198,7 +221,7 @@
     <hr class="divider">
 
     <!-- ===================== WORKING GROUP ===================== -->
-    <section class="section" id="working-group">
+    <section class="section reveal" id="working-group">
       <span class="kicker">The living conversation</span>
       <h2>From the Working Group</h2>
       <p>These readings grow out of a wider, continuing conversation. The <a href="https://wg.criticalcodestudies.com/" target="_blank" rel="noopener noreferrer">Critical Code Studies Working Group</a> is the field's online collaboratory, convening scholars, artists, and programmers to read code together. Its ninth biennial session runs in early 2026, with a week given over to artificial intelligence and code: the question of what is left to read when so much code is generated rather than written.</p>
@@ -236,7 +259,7 @@
     <hr class="divider">
 
     <!-- ===================== ABOUT TEASER ===================== -->
-    <section class="section" id="about">
+    <section class="section reveal" id="about">
       <span class="kicker">The group</span>
       <h2>Who reads</h2>
       <p>These readings are produced as a collaboration between <strong>David M. Berry</strong> (University of Sussex) and <strong>Mark C. Marino</strong> (University of Southern California), drawing on the wider Critical Code Studies community that has met since 2010 in the CCS Working Group. The readings are open and citable; the source for each site is on GitHub.</p>
