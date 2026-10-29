@@ -1,5 +1,7 @@
 # Critical Code Studies
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23763718.svg)](https://doi.org/10.5281/zenodo.23763718)
+
 The umbrella site for the Critical Code Studies group's readings — a hub that
 introduces CCS as a method and links to the individual close readings of
 landmark programs.
@@ -41,6 +43,12 @@ pen laid over the machine's green voice.
 
 Served by GitHub Pages from the `main` branch (root). `.nojekyll` is present so
 the `assets/` directory is published verbatim.
+
+## Citation
+
+Each release is archived on Zenodo. Cite the all-versions DOI
+[10.5281/zenodo.23763718](https://doi.org/10.5281/zenodo.23763718), which always
+resolves to the latest release.
 
 ## License
 
