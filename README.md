@@ -42,5 +42,9 @@ pen laid over the machine's green voice.
 Served by GitHub Pages from the `main` branch (root). `.nojekyll` is present so
 the `assets/` directory is published verbatim.
 
+## License
+
+GNU General Public License v3.0 or later. See [LICENSE](LICENSE).
+
 By David M. Berry (University of Sussex) and Mark C. Marino (University of
 Southern California).
